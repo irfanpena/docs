@@ -37,7 +37,7 @@
   "navigation": [
     {
       "group": "Intoduction",
-      "pages": ["introduction", "quickstart"]
+      "pages": ["introduction"]
     },
     {
       "group": "API Documentation",
