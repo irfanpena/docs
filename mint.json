@@ -22,6 +22,18 @@
   },
   "tabs": [
     {
+      "name": "Integration",
+      "url": "integrationapi"
+    },
+    {
+      "name": "Recruiting",
+      "url": "recruiting"
+    },
+    {
+      "name": "System",
+      "url": "system"
+    },
+    {
       "name": "API Reference",
       "url": "api-reference"
     }
