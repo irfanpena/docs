@@ -22,27 +22,11 @@
   },
   "tabs": [
     {
-      "name": "Integration",
-      "url": "integrationapi"
-    },
-    {
-      "name": "Recruiting",
-      "url": "recruitingapi"
-    },
-    {
-      "name": "System",
-      "url": "systemapi"
-    },
-    {
       "name": "API Reference",
       "url": "api-reference"
     }
   ],
   "navigation": [
-    {
-      "group": "Get Started",
-      "pages": ["introduction", "quickstart", "development"]
-    },
     {
       "group": "Integration",
       "pages": ["integrationapi/integrationapi"]
