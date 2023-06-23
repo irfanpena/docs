@@ -54,16 +54,28 @@
     {
       "group": "Endpoint Examples",
       "pages": [
-        "api-reference/endpoint/vacanciesdetailed",
-        "api-reference/endpoint/vacanciessimple",
-        "api-reference/endpoint/vacanciesexcludead",
-        "api-reference/endpoint/vacanciesconfiguration",
-        "api-reference/endpoint/vacanciesad",
-        "api-reference/endpoint/vacanciesdetailsconfig",
-        "api-reference/endpoint/jobalert",
-        "api-reference/endpoint/updatejobalert",
-        "api-reference/endpoint/deletejobalertid",
-        "api-reference/endpoint/getjobalert"
+        {
+          "group": "Basic",
+          "pages":["api-reference/endpoint/vacanciesdetailed",
+          "api-reference/endpoint/vacanciessimple"]
+        },
+        {
+          "group": "Vacancy List",
+          "pages":["api-reference/endpoint/vacanciesconfiguration"]
+        },
+        {
+          "group": "Vacancy Details",
+          "pages":["api-reference/endpoint/vacanciesexcludead",
+          "api-reference/endpoint/vacanciesad",
+          "api-reference/endpoint/vacanciesdetailsconfig"]
+        },
+        {
+          "group": "Old",
+          "pages":["api-reference/endpoint/jobalert",
+          "api-reference/endpoint/updatejobalert",
+          "api-reference/endpoint/deletejobalertid",
+          "api-reference/endpoint/getjobalert"]
+        }
       ]
     }
   ],
