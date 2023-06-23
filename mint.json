@@ -1,10 +1,10 @@
 {
   "name": "Starter Kit",
   "logo": {
-    "dark": "/logo/dark.svg",
-    "light": "/logo/light.svg"
+    "dark": "/images/logo.png",
+    "light": "/images/logo.png"
   },
-  "favicon": "/favicon.png",
+  "favicon": "/images/favicon.png",
   "colors": {
     "primary": "#12A7D3",
     "light": "#81D7F7",
@@ -13,7 +13,7 @@
   "topbarLinks": [
     {
       "name": "Documentation",
-      "url": "https://mintlify.com/docs"
+      "url": "https://apidocs-dev.mindkey.com/"
     }
   ],
   "topbarCtaButton": {
