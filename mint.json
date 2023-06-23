@@ -74,7 +74,25 @@
           "pages":["api-reference/endpoint/jobalert",
           "api-reference/endpoint/updatejobalert",
           "api-reference/endpoint/deletejobalertid",
-          "api-reference/endpoint/getjobalert"]
+          "api-reference/endpoint/getjobalert",
+          "api-reference/endpoint/generatejobalert"]
+        },
+        {
+          "group": "Lookups",
+          "pages":["api-reference/endpoint/mailingtemplate",
+          "api-reference/endpoint/dataspecific"]
+        },
+        {
+          "group": "Job Agents",
+          "pages":["api-reference/endpoint/jobagenttype",
+          "api-reference/endpoint/createjobagent",
+          "api-reference/endpoint/resendemail",
+          "api-reference/endpoint/activatejobagent",
+          "api-reference/endpoint/emailexists",
+          "api-reference/endpoint/getjobagent",
+          "api-reference/endpoint/putjobagent",
+          "api-reference/endpoint/deletejobagent",
+          "api-reference/endpoint/jobagentconfig"]
         }
       ]
     }
