@@ -54,10 +54,16 @@
     {
       "group": "Endpoint Examples",
       "pages": [
-        "api-reference/endpoint/get",
-        "api-reference/endpoint/create",
-        "api-reference/endpoint/update",
-        "api-reference/endpoint/delete"
+        "api-reference/endpoint/vacanciesdetailed",
+        "api-reference/endpoint/vacanciessimple",
+        "api-reference/endpoint/vacanciesexcludead",
+        "api-reference/endpoint/vacanciesconfiguration",
+        "api-reference/endpoint/vacanciesad",
+        "api-reference/endpoint/vacanciesdetailsconfig",
+        "api-reference/endpoint/jobalert",
+        "api-reference/endpoint/deletejobalert",
+        "api-reference/endpoint/updatejobalert",
+        "api-reference/endpoint/deletejobalertid"
       ]
     }
   ],
