@@ -40,6 +40,18 @@
       "pages": ["introduction"]
     },
     {
+      "group": "Integration",
+      "pages": ["integrationapi/integrationapi"]
+    },
+    {
+      "group": "Recruiting",
+      "pages": ["recruiting/recruitingapi"]
+    },
+    {
+      "group": "System",
+      "pages": ["system/systemapi"]
+    },
+    {
       "group": "API Documentation",
       "pages": ["api-reference/authentication"]
     },
