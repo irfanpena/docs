@@ -52,7 +52,7 @@
       "pages": ["system/systemapi"]
     },
     {
-      "group": "Endpoint Examples",
+      "group": "Endpoints",
       "pages": [
         {
           "group": "Basic",
