@@ -12,14 +12,10 @@
   },
   "topbarLinks": [
     {
-      "name": "Documentation",
-      "url": "https://apidocs-dev.mindkey.com/"
+      "name": "API Client Documentation",
+      "url": "https://apidocs-dev.mindkey.com/recruiting-typedoc/index.html"
     }
   ],
-  "topbarCtaButton": {
-    "name": "Dashboard",
-    "url": "https://dashboard.mintlify.com"
-  },
   "tabs": [
     {
       "name": "Integration",
@@ -40,16 +36,8 @@
   ],
   "navigation": [
     {
-      "group": "Integration",
-      "pages": ["integrationapi/integrationapi"]
-    },
-    {
-      "group": "Recruiting",
-      "pages": ["recruiting/recruitingapi"]
-    },
-    {
-      "group": "System",
-      "pages": ["system/systemapi"]
+      "group": "Intoduction",
+      "pages": ["introduction", "quickstart"]
     },
     {
       "group": "API Documentation",
