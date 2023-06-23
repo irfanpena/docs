@@ -30,6 +30,10 @@
       "url": "recruitingapi"
     },
     {
+      "name": "System",
+      "url": "systemapi"
+    },
+    {
       "name": "API Reference",
       "url": "api-reference"
     }
@@ -40,12 +44,16 @@
       "pages": ["introduction", "quickstart", "development"]
     },
     {
-      "group": "Essentials",
-      "pages": ["essentials/markdown", "essentials/code", "essentials/images", "essentials/settings", "essentials/navigation"]
-    },
-    {
       "group": "Integration",
       "pages": ["integrationapi/integrationapi"]
+    },
+    {
+      "group": "Recruiting",
+      "pages": ["recruiting/recruitingapi"]
+    },
+    {
+      "group": "System",
+      "pages": ["system/systemapi"]
     },
     {
       "group": "API Documentation",
