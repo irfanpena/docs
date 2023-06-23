@@ -26,6 +26,10 @@
       "url": "integrationapi"
     },
     {
+      "name": "Recruiting",
+      "url": "recruitingapi"
+    },
+    {
       "name": "API Reference",
       "url": "api-reference"
     }
