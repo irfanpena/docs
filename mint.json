@@ -93,6 +93,15 @@
           "api-reference/endpoint/putjobagent",
           "api-reference/endpoint/deletejobagent",
           "api-reference/endpoint/jobagentconfig"]
+        },
+        {
+          "group": "Candidates",
+          "pages":["api-reference/endpoint/createcandidate",
+          "api-reference/endpoint/getcandidate"]
+        },
+        {
+          "group": "Default",
+          "pages":["api-reference/endpoint/swagger"]
         }
       ]
     }
