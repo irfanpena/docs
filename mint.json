@@ -62,7 +62,8 @@
         "api-reference/endpoint/vacanciesdetailsconfig",
         "api-reference/endpoint/jobalert",
         "api-reference/endpoint/updatejobalert",
-        "api-reference/endpoint/deletejobalertid"
+        "api-reference/endpoint/deletejobalertid",
+        "api-reference/endpoint/getjobalert"
       ]
     }
   ],
