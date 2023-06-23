@@ -1,129 +1,99 @@
----
 openapi: 3.0.0
 info:
   title: Recruiting API
   version: 1.0.0
 servers:
-- url: https://recruiting-api-dev.mindkey.com
+  - url: http://{recruiting_root}
 tags:
-- name: Vacancy List
-- name: Vacancy List > Detailed
-- name: Vacancy List > Simple
-- name: Vacancy List > Simple > Filters
-- name: Vacancy Details
-- name: Basic
-- name: Old
-- name: Lookups
-- name: Job Agents
-- name: Candidates
+  - name: Vacancy List
+  - name: Vacancy List > Detailed
+  - name: Vacancy List > Simple
+  - name: Vacancy List > Simple > Filters
+  - name: Vacancy Details
+  - name: Basic
+  - name: Old
+  - name: Lookups
+  - name: Job Agents
+  - name: Candidates
 paths:
   /{recruiting_customer_id}/vacancies/detailed:
     get:
       tags:
-      - Basic
+        - Basic
       summary: Get All Vacancies - Detailed
       parameters:
-      - name: X-MindKey-User-Language
-        in: header
-        required: false
-        style: simple
-        explode: false
-        schema:
-          type: string
-        example: en-US
-      - name: Origin
-        in: header
-        required: false
-        style: simple
-        explode: false
-        schema:
-          type: string
-        example: http://localhost:8080
-      - name: recruiting_customer_id
-        in: path
-        required: true
-        style: simple
-        explode: false
-        schema:
-          type: string
+        - name: X-MindKey-User-Language
+          in: header
+          schema:
+            type: string
+          example: en-US
+        - name: Origin
+          in: header
+          schema:
+            type: string
+          example: http://localhost:8080
+        - name: recruiting_customer_id
+          in: path
+          schema:
+            type: string
+          required: true
       responses:
-        "200":
+        '200':
           description: Successful response
           content:
             application/json: {}
     options:
       tags:
-      - default
+        - default
       summary: Options
+      requestBody:
+        content: {}
       parameters:
-      - name: Access-Control-Request-Method
-        in: header
-        required: false
-        style: simple
-        explode: false
-        schema:
-          type: string
-        example: GET
-      - name: Access-Control-Request-Headers
-        in: header
-        required: false
-        style: simple
-        explode: false
-        schema:
-          type: string
-        example: "x-mindkey-user-language,x-mindkey-user-name,x-mindkey-user-timezone"
-      - name: Origin
-        in: header
-        required: false
-        style: simple
-        explode: false
-        schema:
-          type: string
-        example: https://localhost:8080
-      - name: recruiting_customer_id
-        in: path
-        required: true
-        style: simple
-        explode: false
-        schema:
-          type: string
+        - name: Access-Control-Request-Method
+          in: header
+          schema:
+            type: string
+          example: GET
+        - name: Access-Control-Request-Headers
+          in: header
+          schema:
+            type: string
+          example: x-mindkey-user-language,x-mindkey-user-name,x-mindkey-user-timezone
+        - name: Origin
+          in: header
+          schema:
+            type: string
+          example: https://localhost:8080
+        - name: recruiting_customer_id
+          in: path
+          schema:
+            type: string
+          required: true
       responses:
-        "204":
+        '204':
           description: No Content
           headers:
             Date:
-              style: simple
-              explode: false
               schema:
                 type: string
-                example: "Wed, 15 Mar 2023 09:19:15 GMT"
+                example: Wed, 15 Mar 2023 09:19:15 GMT
             Connection:
-              style: simple
-              explode: false
               schema:
                 type: string
                 example: keep-alive
             Server:
-              style: simple
-              explode: false
               schema:
                 type: string
                 example: Kestrel
             Request-Context:
-              style: simple
-              explode: false
               schema:
                 type: string
                 example: appId=cid-v1:3a915af9-4520-41f5-82db-5436fdad8fe6
             Expect-CT:
-              style: simple
-              explode: false
               schema:
                 type: string
-                example: "max-age=86400, enforce"
+                example: max-age=86400, enforce
             X-Content-Type-Options:
-              style: simple
-              explode: false
               schema:
                 type: string
                 example: nosniff
@@ -131,510 +101,406 @@ paths:
             text/plain:
               schema:
                 type: string
+              example: null
   /{recruiting_customer_id}/vacancies/simple:
     get:
       tags:
-      - Basic
+        - Basic
       summary: Get All Vacancies - Simple
       parameters:
-      - name: X-MindKey-User-Language
-        in: header
-        required: false
-        style: simple
-        explode: false
-        schema:
-          type: string
-        example: da-DK
-      - name: Origin
-        in: header
-        required: false
-        style: simple
-        explode: false
-        schema:
-          type: string
-        example: http://localhost:8080
-      - name: recruiting_customer_id
-        in: path
-        required: true
-        style: simple
-        explode: false
-        schema:
-          type: string
+        - name: X-MindKey-User-Language
+          in: header
+          schema:
+            type: string
+          example: da-DK
+        - name: Origin
+          in: header
+          schema:
+            type: string
+          example: http://localhost:8080
+        - name: recruiting_customer_id
+          in: path
+          schema:
+            type: string
+          required: true
       responses:
-        "200":
+        '200':
           description: Successful response
           content:
             application/json: {}
   /{recruiting_customer_id}/vacancies/configuration/list:
     get:
       tags:
-      - Vacancy List
+        - Vacancy List
       summary: Vacancy List Configuration
       parameters:
-      - name: X-MindKey-User-Language
-        in: header
-        required: false
-        style: simple
-        explode: false
-        schema:
-          type: string
-        example: da-DK
-      - name: Origin
-        in: header
-        required: false
-        style: simple
-        explode: false
-        schema:
-          type: string
-        example: http://localhost:8080
-      - name: recruiting_customer_id
-        in: path
-        required: true
-        style: simple
-        explode: false
-        schema:
-          type: string
+        - name: X-MindKey-User-Language
+          in: header
+          schema:
+            type: string
+          example: da-DK
+        - name: Origin
+          in: header
+          schema:
+            type: string
+          example: http://localhost:8080
+        - name: recruiting_customer_id
+          in: path
+          schema:
+            type: string
+          required: true
       responses:
-        "200":
+        '200':
           description: Successful response
           content:
             application/json: {}
   /{recruiting_customer_id}/vacancies/Roti-1:
     get:
       tags:
-      - Vacancy Details
+        - Vacancy Details
       summary: Get Vacancy Details - ExcludeAdvertisementText
       parameters:
-      - name: X-MindKey-User-Language
-        in: header
-        required: false
-        style: simple
-        explode: false
-        schema:
-          type: string
-        example: da-dk
-      - name: Origin
-        in: header
-        required: false
-        style: simple
-        explode: false
-        schema:
-          type: string
-        example: http://localhost:8080
-      - name: IncludeAdvertisementText
-        in: query
-        required: false
-        style: form
-        explode: true
-        schema:
-          type: boolean
-        example: "false"
-      - name: recruiting_customer_id
-        in: path
-        required: true
-        style: simple
-        explode: false
-        schema:
-          type: string
+        - name: X-MindKey-User-Language
+          in: header
+          schema:
+            type: string
+          example: da-dk
+        - name: Origin
+          in: header
+          schema:
+            type: string
+          example: http://localhost:8080
+        - name: IncludeAdvertisementText
+          in: query
+          schema:
+            type: boolean
+          example: 'false'
+        - name: recruiting_customer_id
+          in: path
+          schema:
+            type: string
+          required: true
       responses:
-        "200":
+        '200':
           description: Successful response
           content:
             application/json: {}
   /{recruiting_customer_id}/vacancies/AdvertisementText/Roti-1:
     get:
       tags:
-      - Vacancy Details
+        - Vacancy Details
       summary: Get Vacancy AdvertisementText
       parameters:
-      - name: X-MindKey-User-Language
-        in: header
-        required: false
-        style: simple
-        explode: false
-        schema:
-          type: string
-        example: da-dk
-      - name: Origin
-        in: header
-        required: false
-        style: simple
-        explode: false
-        schema:
-          type: string
-        example: http://localhost:8080
-      - name: recruiting_customer_id
-        in: path
-        required: true
-        style: simple
-        explode: false
-        schema:
-          type: string
+        - name: X-MindKey-User-Language
+          in: header
+          schema:
+            type: string
+          example: da-dk
+        - name: Origin
+          in: header
+          schema:
+            type: string
+          example: http://localhost:8080
+        - name: recruiting_customer_id
+          in: path
+          schema:
+            type: string
+          required: true
       responses:
-        "200":
+        '200':
           description: Successful response
           content:
             application/json: {}
   /{recruiting_customer_id}/vacancies/configuration/details:
     get:
       tags:
-      - Vacancy Details
+        - Vacancy Details
       summary: Vacancy Details Configuration
       parameters:
-      - name: X-MindKey-User-Language
-        in: header
-        required: false
-        style: simple
-        explode: false
-        schema:
-          type: string
-        example: da-DK
-      - name: Origin
-        in: header
-        required: false
-        style: simple
-        explode: false
-        schema:
-          type: string
-        example: http://localhost:8080
-      - name: recruiting_customer_id
-        in: path
-        required: true
-        style: simple
-        explode: false
-        schema:
-          type: string
+        - name: X-MindKey-User-Language
+          in: header
+          schema:
+            type: string
+          example: da-DK
+        - name: Origin
+          in: header
+          schema:
+            type: string
+          example: http://localhost:8080
+        - name: recruiting_customer_id
+          in: path
+          schema:
+            type: string
+          required: true
       responses:
-        "200":
+        '200':
           description: Successful response
           content:
             application/json: {}
   /{recruiting_customer_id}/jobAlerts:
     post:
       tags:
-      - Old
+        - Old
       summary: CreateJobAlert (Invalid Mail)
-      parameters:
-      - name: X-MindKey-User-Language
-        in: header
-        required: false
-        style: simple
-        explode: false
-        schema:
-          type: string
-        example: da-dk
-      - name: recruiting_customer_id
-        in: path
-        required: true
-        style: simple
-        explode: false
-        schema:
-          type: string
       requestBody:
         content:
           '*/*':
             schema:
               type: string
-              example: "\"{\\n\\t\\\"email\\\": \\\"thorsten.hans@thinktecture.com\\\",\\n\\t\\\"emailVerification\\\": \\\"thorsten.hans@thinktecture.com2\\\"\\n}\""
+              example: '"{\n\t\"email\": \"thorsten.hans@thinktecture.com\",\n\t\"emailVerification\": \"thorsten.hans@thinktecture.com2\"\n}"'
+      parameters:
+        - name: X-MindKey-User-Language
+          in: header
+          schema:
+            type: string
+          example: da-dk
+        - name: Content-Type
+          in: header
+          schema:
+            type: string
+          example: application/json
+        - name: recruiting_customer_id
+          in: path
+          schema:
+            type: string
+          required: true
       responses:
-        "400":
+        '400':
           description: Successful response
           content:
             application/json: {}
     delete:
       tags:
-      - Old
+        - Old
       summary: DeleteAllJobAlertsByMail
       parameters:
-      - name: X-MindKey-User-Language
-        in: header
-        required: false
-        style: simple
-        explode: false
-        schema:
-          type: string
-        example: da-dk
-      - name: recruiting_customer_id
-        in: path
-        required: true
-        style: simple
-        explode: false
-        schema:
-          type: string
+        - name: X-MindKey-User-Language
+          in: header
+          schema:
+            type: string
+          example: da-dk
+        - name: Content-Type
+          in: header
+          schema:
+            type: string
+          example: application/json
+        - name: recruiting_customer_id
+          in: path
+          schema:
+            type: string
+          required: true
       responses:
-        "204":
+        '204':
           description: Successful response
           content:
             application/json: {}
   /{recruiting_customer_id}/jobAlerts/1:
-    get:
-      tags:
-      - Old
-      summary: GetJobAlertDetails
-      parameters:
-      - name: X-MindKey-User-Language
-        in: header
-        required: false
-        style: simple
-        explode: false
-        schema:
-          type: string
-        example: da-dk
-      - name: Origin
-        in: header
-        required: false
-        style: simple
-        explode: false
-        schema:
-          type: string
-        example: http://localhost:4200
-      - name: recruiting_customer_id
-        in: path
-        required: true
-        style: simple
-        explode: false
-        schema:
-          type: string
-      responses:
-        "200":
-          description: Successful response
-          content:
-            application/json: {}
     put:
       tags:
-      - Old
+        - Old
       summary: UpdateJobAlertDetails
-      parameters:
-      - name: X-MindKey-User-Language
-        in: header
-        required: false
-        style: simple
-        explode: false
-        schema:
-          type: string
-        example: da-dk
-      - name: recruiting_customer_id
-        in: path
-        required: true
-        style: simple
-        explode: false
-        schema:
-          type: string
       requestBody:
         content:
           '*/*':
             schema:
               type: string
-              example: "\"{\\n\\t\\n}\""
+              example: '"{\n\t\n}"'
+      parameters:
+        - name: X-MindKey-User-Language
+          in: header
+          schema:
+            type: string
+          example: da-dk
+        - name: Content-Type
+          in: header
+          schema:
+            type: string
+          example: application/json
+        - name: recruiting_customer_id
+          in: path
+          schema:
+            type: string
+          required: true
       responses:
-        "200":
+        '200':
           description: Successful response
           content:
             application/json: {}
     delete:
       tags:
-      - Old
+        - Old
       summary: DeleteJobAlertById
       parameters:
-      - name: X-MindKey-User-Language
-        in: header
-        required: false
-        style: simple
-        explode: false
-        schema:
-          type: string
-        example: da-dk
-      - name: recruiting_customer_id
-        in: path
-        required: true
-        style: simple
-        explode: false
-        schema:
-          type: string
+        - name: X-MindKey-User-Language
+          in: header
+          schema:
+            type: string
+          example: da-dk
+        - name: Content-Type
+          in: header
+          schema:
+            type: string
+          example: application/json
+        - name: recruiting_customer_id
+          in: path
+          schema:
+            type: string
+          required: true
       responses:
-        "204":
+        '204':
+          description: Successful response
+          content:
+            application/json: {}
+    get:
+      tags:
+        - Old
+      summary: GetJobAlertDetails
+      parameters:
+        - name: X-MindKey-User-Language
+          in: header
+          schema:
+            type: string
+          example: da-dk
+        - name: Origin
+          in: header
+          schema:
+            type: string
+          example: http://localhost:4200
+        - name: recruiting_customer_id
+          in: path
+          schema:
+            type: string
+          required: true
+      responses:
+        '200':
           description: Successful response
           content:
             application/json: {}
   /{recruiting_customer_id}/jobAlerts/link:
     post:
       tags:
-      - Old
+        - Old
       summary: GenerateJobAlertLink
-      parameters:
-      - name: X-MindKey-User-Language
-        in: header
-        required: false
-        style: simple
-        explode: false
-        schema:
-          type: string
-        example: da-dk
-      - name: recruiting_customer_id
-        in: path
-        required: true
-        style: simple
-        explode: false
-        schema:
-          type: string
       requestBody:
         content:
           '*/*':
             schema:
               type: string
-              example: "\"{\\n\\t\\\"email\\\": \\\"thorsten.hans@thinktecture.com\\\"\\n}\""
+              example: '"{\n\t\"email\": \"thorsten.hans@thinktecture.com\"\n}"'
+      parameters:
+        - name: X-MindKey-User-Language
+          in: header
+          schema:
+            type: string
+          example: da-dk
+        - name: Content-Type
+          in: header
+          schema:
+            type: string
+          example: application/json
+        - name: recruiting_customer_id
+          in: path
+          schema:
+            type: string
+          required: true
       responses:
-        "200":
+        '200':
           description: Successful response
           content:
             application/json: {}
   /{recruiting_customer_id}/candidates/lookup/mailingtemplates:
     get:
       tags:
-      - Lookups
+        - Lookups
       summary: Mailing Templates
       parameters:
-      - name: X-MindKey-User-Language
-        in: header
-        required: false
-        style: simple
-        explode: false
-        schema:
-          type: string
-        example: da-DK
-      - name: Origin
-        in: header
-        required: false
-        style: simple
-        explode: false
-        schema:
-          type: string
-        example: http://localhost:8080
-      - name: recruiting_customer_id
-        in: path
-        required: true
-        style: simple
-        explode: false
-        schema:
-          type: string
+        - name: X-MindKey-User-Language
+          in: header
+          schema:
+            type: string
+          example: da-DK
+        - name: Origin
+          in: header
+          schema:
+            type: string
+          example: http://localhost:8080
+        - name: recruiting_customer_id
+          in: path
+          schema:
+            type: string
+          required: true
       responses:
-        "200":
+        '200':
           description: Successful response
           content:
             application/json: {}
   /{recruiting_customer_id}/candidates/lookup:
     get:
       tags:
-      - Lookups
+        - Lookups
       summary: Lookup Data Specific
       parameters:
-      - name: X-MindKey-User-Language
-        in: header
-        required: false
-        style: simple
-        explode: false
-        schema:
-          type: string
-        example: da-DK
-      - name: Origin
-        in: header
-        required: false
-        style: simple
-        explode: false
-        schema:
-          type: string
-        example: http://localhost:8080
-      - name: IncludeCountry
-        in: query
-        required: false
-        style: form
-        explode: true
-        schema:
-          type: boolean
-        example: "false"
-      - name: IncludeNationality
-        in: query
-        required: false
-        style: form
-        explode: true
-        schema:
-          type: boolean
-        example: "true"
-      - name: recruiting_customer_id
-        in: path
-        required: true
-        style: simple
-        explode: false
-        schema:
-          type: string
+        - name: X-MindKey-User-Language
+          in: header
+          schema:
+            type: string
+          example: da-DK
+        - name: Origin
+          in: header
+          schema:
+            type: string
+          example: http://localhost:8080
+        - name: IncludeCountry
+          in: query
+          schema:
+            type: boolean
+          example: 'false'
+        - name: IncludeNationality
+          in: query
+          schema:
+            type: boolean
+          example: 'true'
+        - name: recruiting_customer_id
+          in: path
+          schema:
+            type: string
+          required: true
       responses:
-        "200":
+        '200':
           description: Successful response
           content:
             application/json: {}
   /{recruiting_customer_id}/job-agents/types/JobAgent:
     get:
       tags:
-      - Job Agents
+        - Job Agents
       summary: Get Job Agent Type
       parameters:
-      - name: X-MindKey-User-Language
-        in: header
-        required: false
-        style: simple
-        explode: false
-        schema:
-          type: string
-        example: da-dk
-      - name: Origin
-        in: header
-        required: false
-        style: simple
-        explode: false
-        schema:
-          type: string
-        example: http://localhost:8080
-      - name: recruiting_customer_id
-        in: path
-        required: true
-        style: simple
-        explode: false
-        schema:
-          type: string
+        - name: X-MindKey-User-Language
+          in: header
+          schema:
+            type: string
+          example: da-dk
+        - name: Origin
+          in: header
+          schema:
+            type: string
+          example: http://localhost:8080
+        - name: recruiting_customer_id
+          in: path
+          schema:
+            type: string
+          required: true
       responses:
-        "200":
+        '200':
           description: Successful response
           content:
             application/json: {}
   /{recruiting_customer_id}/job-agents/create/JobAgent:
     post:
       tags:
-      - Job Agents
+        - Job Agents
       summary: Create Job Agent
-      parameters:
-      - name: X-MindKey-User-Language
-        in: header
-        required: false
-        style: simple
-        explode: false
-        schema:
-          type: string
-        example: da-dk
-      - name: Origin
-        in: header
-        required: false
-        style: simple
-        explode: false
-        schema:
-          type: string
-        example: http://localhost:8080
-      - name: recruiting_customer_id
-        in: path
-        required: true
-        style: simple
-        explode: false
-        schema:
-          type: string
       requestBody:
         content:
           application/json:
@@ -643,167 +509,169 @@ paths:
               example:
                 name: Henrik Skak Pedersen
                 email: henriksp@me.com
-                keywords: "Service Design, UX, kommunikation, projektledelse, innovation"
+                keywords: Service Design, UX, kommunikation, projektledelse, innovation
+                cultureId: null
                 locations:
-                - L5
+                  - L5
                 regions:
-                - Sjælland
+                  - Sjælland
                 fieldsOfWork:
-                - Byggekonst
+                  - Byggekonst
+      parameters:
+        - name: X-MindKey-User-Language
+          in: header
+          schema:
+            type: string
+          example: da-dk
+        - name: Origin
+          in: header
+          schema:
+            type: string
+          example: http://localhost:8080
+        - name: recruiting_customer_id
+          in: path
+          schema:
+            type: string
+          required: true
       responses:
-        "200":
+        '200':
           description: Successful response
           content:
             application/json: {}
   /{recruiting_customer_id}/job-agents/resend-email/JobAgent:
     post:
       tags:
-      - Job Agents
+        - Job Agents
       summary: Resend E-mail
-      parameters:
-      - name: X-MindKey-User-Language
-        in: header
-        required: false
-        style: simple
-        explode: false
-        schema:
-          type: string
-        example: da-dk
-      - name: Origin
-        in: header
-        required: false
-        style: simple
-        explode: false
-        schema:
-          type: string
-        example: http://localhost:8080
-      - name: recruiting_customer_id
-        in: path
-        required: true
-        style: simple
-        explode: false
-        schema:
-          type: string
       requestBody:
         content:
           application/json:
             schema:
               type: object
               example: henriksp@me.com
+      parameters:
+        - name: X-MindKey-User-Language
+          in: header
+          schema:
+            type: string
+          example: da-dk
+        - name: Origin
+          in: header
+          schema:
+            type: string
+          example: http://localhost:8080
+        - name: recruiting_customer_id
+          in: path
+          schema:
+            type: string
+          required: true
       responses:
-        "200":
+        '200':
           description: Successful response
           content:
             application/json: {}
   /{recruiting_customer_id}/job-agents/activate/JobAgent:
     post:
       tags:
-      - Job Agents
+        - Job Agents
       summary: Activate
-      parameters:
-      - name: X-MindKey-User-Language
-        in: header
-        required: false
-        style: simple
-        explode: false
-        schema:
-          type: string
-        example: da-dk
-      - name: Origin
-        in: header
-        required: false
-        style: simple
-        explode: false
-        schema:
-          type: string
-        example: http://localhost:8080
-      - name: recruiting_customer_id
-        in: path
-        required: true
-        style: simple
-        explode: false
-        schema:
-          type: string
       requestBody:
         content:
           application/json:
             schema:
               type: object
               example: F38971DF451B125926EED7867AE08BDFD4D4EF18E81AC86AE023544D3C97925E
+      parameters:
+        - name: X-MindKey-User-Language
+          in: header
+          schema:
+            type: string
+          example: da-dk
+        - name: Origin
+          in: header
+          schema:
+            type: string
+          example: http://localhost:8080
+        - name: recruiting_customer_id
+          in: path
+          schema:
+            type: string
+          required: true
       responses:
-        "200":
+        '200':
           description: Successful response
           content:
             application/json: {}
   /{recruiting_customer_id}/job-agents/emailexists/JobAgent:
     post:
       tags:
-      - Job Agents
+        - Job Agents
       summary: Email Exists
-      parameters:
-      - name: X-MindKey-User-Language
-        in: header
-        required: false
-        style: simple
-        explode: false
-        schema:
-          type: string
-        example: da-dk
-      - name: Origin
-        in: header
-        required: false
-        style: simple
-        explode: false
-        schema:
-          type: string
-        example: http://localhost:8080
-      - name: recruiting_customer_id
-        in: path
-        required: true
-        style: simple
-        explode: false
-        schema:
-          type: string
       requestBody:
         content:
           application/json:
             schema:
               type: object
               example: henriksp@me.com
+      parameters:
+        - name: X-MindKey-User-Language
+          in: header
+          schema:
+            type: string
+          example: da-dk
+        - name: Origin
+          in: header
+          schema:
+            type: string
+          example: http://localhost:8080
+        - name: recruiting_customer_id
+          in: path
+          schema:
+            type: string
+          required: true
       responses:
-        "200":
+        '200':
           description: Successful response
           content:
             application/json: {}
   /{recruiting_customer_id}/job-agents/JobAgent:
+    post:
+      tags:
+        - Job Agents
+      summary: Get Job Agent
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                JobAgentId: 099a99f2-5d07-4937-94c1-7da93861e8d8
+                Code: A2B31CDDEE6EC49805F29EE9929A28DFDAF4CB3C9197868CD175979CC70B0B06
+      parameters:
+        - name: X-MindKey-User-Language
+          in: header
+          schema:
+            type: string
+          example: da-dk
+        - name: Origin
+          in: header
+          schema:
+            type: string
+          example: http://localhost:8080
+        - name: recruiting_customer_id
+          in: path
+          schema:
+            type: string
+          required: true
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
     put:
       tags:
-      - Job Agents
+        - Job Agents
       summary: Update Job Agent
-      parameters:
-      - name: X-MindKey-User-Language
-        in: header
-        required: false
-        style: simple
-        explode: false
-        schema:
-          type: string
-        example: da-dk
-      - name: Origin
-        in: header
-        required: false
-        style: simple
-        explode: false
-        schema:
-          type: string
-        example: http://localhost:8080
-      - name: recruiting_customer_id
-        in: path
-        required: true
-        style: simple
-        explode: false
-        schema:
-          type: string
       requestBody:
         content:
           application/json:
@@ -814,240 +682,175 @@ paths:
                 Code: F38971DF451B125926EED7867AE08BDFD4D4EF18E81AC86AE023544D3C97925E
                 name: Henrik Skak Pedersen
                 email: henriksp@me.com
-                keywords: "Service Design, UX, kommunikation, projektledelse, innovation"
+                keywords: Service Design, UX, kommunikation, projektledelse, innovation
+                cultureId: null
                 locations:
-                - L5
-                - L1
+                  - L5
+                  - L1
                 regions:
-                - Sjælland
+                  - Sjælland
                 fieldsOfWork:
-                - Byggekonst
-      responses:
-        "200":
-          description: Successful response
-          content:
-            application/json: {}
-    post:
-      tags:
-      - Job Agents
-      summary: Get Job Agent
+                  - Byggekonst
       parameters:
-      - name: X-MindKey-User-Language
-        in: header
-        required: false
-        style: simple
-        explode: false
-        schema:
-          type: string
-        example: da-dk
-      - name: Origin
-        in: header
-        required: false
-        style: simple
-        explode: false
-        schema:
-          type: string
-        example: http://localhost:8080
-      - name: recruiting_customer_id
-        in: path
-        required: true
-        style: simple
-        explode: false
-        schema:
-          type: string
-      requestBody:
-        content:
-          application/json:
-            schema:
-              type: object
-              example:
-                JobAgentId: 099a99f2-5d07-4937-94c1-7da93861e8d8
-                Code: A2B31CDDEE6EC49805F29EE9929A28DFDAF4CB3C9197868CD175979CC70B0B06
+        - name: X-MindKey-User-Language
+          in: header
+          schema:
+            type: string
+          example: da-dk
+        - name: Origin
+          in: header
+          schema:
+            type: string
+          example: http://localhost:8080
+        - name: recruiting_customer_id
+          in: path
+          schema:
+            type: string
+          required: true
       responses:
-        "200":
+        '200':
           description: Successful response
           content:
             application/json: {}
     delete:
       tags:
-      - Job Agents
+        - Job Agents
       summary: Delete Job Agent
       parameters:
-      - name: X-MindKey-User-Language
-        in: header
-        required: false
-        style: simple
-        explode: false
-        schema:
-          type: string
-        example: da-dk
-      - name: Origin
-        in: header
-        required: false
-        style: simple
-        explode: false
-        schema:
-          type: string
-        example: http://localhost:8080
-      - name: recruiting_customer_id
-        in: path
-        required: true
-        style: simple
-        explode: false
-        schema:
-          type: string
+        - name: X-MindKey-User-Language
+          in: header
+          schema:
+            type: string
+          example: da-dk
+        - name: Origin
+          in: header
+          schema:
+            type: string
+          example: http://localhost:8080
+        - name: recruiting_customer_id
+          in: path
+          schema:
+            type: string
+          required: true
       responses:
-        "200":
+        '200':
           description: Successful response
           content:
             application/json: {}
   /{recruiting_customer_id}/job-agents/configuration:
     get:
       tags:
-      - Job Agents
+        - Job Agents
       summary: Get Job Agent Configuration
       parameters:
-      - name: X-MindKey-User-Language
-        in: header
-        required: false
-        style: simple
-        explode: false
-        schema:
-          type: string
-        example: da-dk
-      - name: Origin
-        in: header
-        required: false
-        style: simple
-        explode: false
-        schema:
-          type: string
-        example: http://localhost:8080
-      - name: recruiting_customer_id
-        in: path
-        required: true
-        style: simple
-        explode: false
-        schema:
-          type: string
+        - name: X-MindKey-User-Language
+          in: header
+          schema:
+            type: string
+          example: da-dk
+        - name: Origin
+          in: header
+          schema:
+            type: string
+          example: http://localhost:8080
+        - name: recruiting_customer_id
+          in: path
+          schema:
+            type: string
+          required: true
       responses:
-        "200":
+        '200':
           description: Successful response
           content:
             application/json: {}
   /{recruiting_customer_id}/candidates:
     post:
       tags:
-      - Candidates
+        - Candidates
       summary: Create Candidate Required Fields
-      parameters:
-      - name: X-MindKey-User-Language
-        in: header
-        required: false
-        style: simple
-        explode: false
-        schema:
-          type: string
-        example: da-DK
-      - name: X-MindKey-User-Culture
-        in: header
-        required: false
-        style: simple
-        explode: false
-        schema:
-          type: string
-        example: da-DK
-      - name: X-MindKey-User-Name
-        in: header
-        required: false
-        style: simple
-        explode: false
-        schema:
-          type: string
-        example: RecruitingAPI
-      - name: Origin
-        in: header
-        required: false
-        style: simple
-        explode: false
-        schema:
-          type: string
-        example: http://localhost:8080
-      - name: recruiting_customer_id
-        in: path
-        required: true
-        style: simple
-        explode: false
-        schema:
-          type: string
       requestBody:
         content:
           multipart/form-data:
             schema:
-              $ref: '#/components/schemas/recruiting_customer_id_candidates_body'
+              type: object
+              properties:
+                candidate:
+                  type: string
+                  example: "{\n    \"vacancyId\": \"IMPORT1\",\n\t\"email\": \"hsp@mindkey.com\",\n    \"name\": \"Mandatory Test\",\n    \"registrationTime\": \"{{currentDate}}\",\n    \"allowSave\": true,\n    \"previouslyApplied\": false\n}"
+      parameters:
+        - name: X-MindKey-User-Language
+          in: header
+          schema:
+            type: string
+          example: da-DK
+        - name: X-MindKey-User-Culture
+          in: header
+          schema:
+            type: string
+          example: da-DK
+        - name: X-MindKey-User-Name
+          in: header
+          schema:
+            type: string
+          example: RecruitingAPI
+        - name: Origin
+          in: header
+          schema:
+            type: string
+          example: http://localhost:8080
+        - name: recruiting_customer_id
+          in: path
+          schema:
+            type: string
+          required: true
       responses:
-        "200":
+        '200':
           description: Successful response
           content:
             application/json: {}
   /{recruiting_customer_id}/candidates/types/Standard:
     get:
       tags:
-      - Candidates
+        - Candidates
       summary: Get Candidate Application Type
       parameters:
-      - name: X-MindKey-User-Language
-        in: header
-        required: false
-        style: simple
-        explode: false
-        schema:
-          type: string
-        example: en-US
-      - name: Origin
-        in: header
-        required: false
-        style: simple
-        explode: false
-        schema:
-          type: string
-        example: http://localhost:8080
-      - name: recruiting_customer_id
-        in: path
-        required: true
-        style: simple
-        explode: false
-        schema:
-          type: string
+        - name: X-MindKey-User-Language
+          in: header
+          schema:
+            type: string
+          example: en-US
+        - name: Origin
+          in: header
+          schema:
+            type: string
+          example: http://localhost:8080
+        - name: recruiting_customer_id
+          in: path
+          schema:
+            type: string
+          required: true
       responses:
-        "200":
+        '200':
           description: Successful response
           content:
             application/json: {}
   /swagger/v1/swagger.json:
     get:
       tags:
-      - default
+        - default
       summary: Swagger
       parameters:
-      - name: X-MindKey-User-Language
-        in: header
-        required: false
-        style: simple
-        explode: false
-        schema:
-          type: string
-        example: da-DK
+        - name: X-MindKey-User-Language
+          in: header
+          schema:
+            type: string
+          example: da-DK
       responses:
-        "200":
+        '200':
           description: Successful response
           content:
             application/json: {}
-components:
-  schemas:
-    recruiting_customer_id_candidates_body:
-      type: object
-      properties:
-        candidate:
-          type: string
-          example: "{\n    \"vacancyId\": \"IMPORT1\",\n\t\"email\": \"hsp@mindkey.com\",\n    \"name\": \"Mandatory Test\",\n    \"registrationTime\": \"{{currentDate}}\",\n    \"allowSave\": true,\n    \"previouslyApplied\": false\n}"
+x-readme:
+  explorer-enabled: true
+  proxy-enabled: true
+  samples-enabled: true
