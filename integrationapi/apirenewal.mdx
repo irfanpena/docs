@@ -1,0 +1,58 @@
+---
+title: 'API Certificate Renewal Process'
+---
+
+
+# API Certificate Renewal Process
+
+Each API certificate has an expiry date and needs to be renewed in order to maintain the customers' integrations running. MindKey periodically checks which certificates are about to expire and takes the responsibility of contacting and informing the customers about the procedures involved in the renewal process.
+
+<Note>The new certificate must be installed on the computer from which the integration is performed and must be saved in the context of the user performing the integration.</Note>
+
+## Certificate Renewal Process Steps
+
+1. Double-click the certificate file to begin the installation process.
+
+![1](/images/1.png)
+
+2. Click **"Next"** to proceed with the installation.
+
+![2](/images/2.png)
+
+3. Click **"Next"** to continue with the installation process.
+
+![3](/images/3.png)
+
+4. Enter the password in the Password field and click **"Next"**.
+
+![4](/images/4.png)
+
+5. Select **"Place all certificates in the following certificate store"** and click **"Browse..."**.
+
+![5](/images/5.png)
+
+6. Choose **"Personal"** and click **"OK"**. Then, click **"Next"** and finally click **"Finish"** to complete the installation process.
+
+![6](/images/6.png)
+
+# Integration
+
+## Determine Imprint (Thumbprint)
+
+Once the certificate is installed, follow these steps to determine the Certificate Imprint to be inserted into the integration script or the XML file with the setup values if the integration reads one.
+
+1. Double-click **"Personal"**, then double-click **"Certificates"**, and finally double-click the imported certificate. In the dialog that opens, click on the **"Details"** tab.
+
+![7](/images/7.png)
+
+2. Scroll until you see the **"Imprint"** field and click on the line with the **"Imprint"** value to select it.
+
+![8](/images/8.png)
+
+<Note>Note down the provided value. This value must later be inserted in the integration script or in the XML file with the setup values if the integration reads one.</Note>
+
+3. Click **"OK"** to save the changes and then close the certificate manager.
+
+After following all the above steps, the certificate is successfully renewed.
+
+<Warning> Make sure to update the integration script or the XML file with the new certificate imprint to ensure seamless integration with MindKey services. </Warning>

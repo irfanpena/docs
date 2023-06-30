@@ -26,10 +26,6 @@
       "url": "recruiting"
     },
     {
-      "name": "System",
-      "url": "system"
-    },
-    {
       "name": "API Reference",
       "url": "api-reference"
     }
@@ -41,15 +37,24 @@
     },
     {
       "group": "Integration",
-      "pages": ["integrationapi/integrationapi"]
+      "pages": ["integrationapi/integrationapi", "integrationapi/systemapi",
+        {
+          "group": "Renewal",
+          "pages":["integrationapi/apirenewal"]
+        }]
     },
     {
       "group": "Recruiting",
-      "pages": ["recruiting/recruitingapi"]
-    },
-    {
-      "group": "System",
-      "pages": ["system/systemapi"]
+      "pages": ["recruiting/recruitingapi", "recruiting/webintegration",
+        {
+          "group": "Components",
+          "pages":["recruiting/webcomponents",
+          {
+            "group": "Wrapper",
+            "pages":[
+            "recruiting/apiclient"]
+          }]
+        }]
     },
     {
       "group": "Endpoints",

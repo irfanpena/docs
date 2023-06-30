@@ -64,7 +64,7 @@ $body = @{
 
 Now you are ready to make your first request. Use the Invoke-MindKeyRestPost method from the shared module:
 
-```
+```powershell
 $Employees = Invoke-MindKeyRestPost "employees/find" -InputObject $body
 ```
 
@@ -72,7 +72,7 @@ The variable $Employees now contains employee objects for each employee in your 
 
 You can display the names of all employees using the following code:
 
-```
+```powershell
 foreach ($Employee in $Employees) {
     $Employee.Name_FullName}
 ```
@@ -87,7 +87,7 @@ The MindKey Integrations API supports CRUD (Create, Read, Update, Delete) operat
 
 To insert a new record in a specific controller, you can use the following syntax:
 
-```
+```powershell
 $Controller = New-Object NameSpaceTarget.ControllerInsertTarget
 $Controller.ControllerId = "ControllerId"
 $Controller.ControllerField1 = "Controller Field1 value"
@@ -105,7 +105,7 @@ The $insertedController variable will contain the newly inserted controller reco
 
 To update an existing record in a specific controller, use the following syntax:
 
-```
+```powershell
 $Controller = New-Object NameSpaceTarget.ControllerUpdateTarget
 $Controller.ControllerField1 = "Controller Field1 value update"
 
@@ -120,7 +120,7 @@ try {
 
 To delete a record from a specific controller, use the following syntax:
 
-```
+```powershell
 try {
     Invoke-MindKeyRestPost "controllers/delete?ControllerId="+$controllerIdValue
 } catch {
@@ -132,7 +132,7 @@ try {
 
 The write operation either inserts or updates a record in the specified controller, depending on whether the key value already exists. Here's an example:
 
-```
+```powershell
 $Controller = New-Object NameSpaceTarget.ControllerWriteTarget
 $Controller.ControllerId = "ControllerId"
 $Controller.ControllerField1 = "Controller Field1 value"
@@ -149,7 +149,7 @@ try {
 
 To search for records in a controller based on specific conditions, use the find operation. Here's an example:
 
-```
+```powershell
 try {
     $ControllerId = 'controllerId'
     Add-Info ("Find Controller: " + $ControllerId)
@@ -177,7 +177,7 @@ The MindKey Integrations API allows you to use logical operators (AND/OR) and co
 
 ## Logical Operators
 
-```
+```powershell
 $body = @{
     columns = "ControllerId, Controller_Name"
     searchCondition =  @(
@@ -192,7 +192,7 @@ $Controllers = Invoke-MindKeyRestPost "controllers/find" -InputObject $body
 
 ## Condition Operators
 
-```
+```powershell
 $body = @{
     columns = "ControllerId, Controller_Name"
     searchCondition =  @(
@@ -244,7 +244,7 @@ You can read these integration records to determine the status of your integrati
 
 To log integration results in MindKey, you can use the syslogs/insert endpoint. Here's an example of an object that can be posted to the syslog:
 
-```
+```powershell
 $SysLog.MessageText = {{Log_As_String}}
 $SysLog.TransDateTime = {{Current_DateTime}}
 $SysLog.HostName = {{Machine_Name / Ip_Address}}
@@ -289,7 +289,7 @@ When making REST requests to the MindKey API, you may need to include specific H
 
 The MindKey API provides various controllers that allow you to access different data sets. To obtain a list of all controllers, you can make a GET request to the following endpoint:
 
-```
+```json
 {{api_root}}/{{customer_id}}/system/controllers
 ```
 
@@ -297,7 +297,7 @@ Replace {{api_root}} with integration.mindkey.com/api and {{customer_id}} with t
 
 For more information about an individual controller, you can retrieve its metadata by calling:
 
-```
+```json
 {{api_root}}/{{customer_id}}/{{controller_name}}/metadata
 ```
 
