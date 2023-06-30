@@ -60,53 +60,13 @@
       "group": "Endpoints",
       "pages": [
         {
-          "group": "Basic",
-          "pages":["api-reference/endpoint/vacanciesdetailed",
-          "api-reference/endpoint/vacanciessimple"]
-        },
-        {
-          "group": "Vacancy List",
-          "pages":["api-reference/endpoint/vacanciesconfiguration"]
-        },
-        {
-          "group": "Vacancy Details",
-          "pages":["api-reference/endpoint/vacanciesexcludead",
-          "api-reference/endpoint/vacanciesad",
-          "api-reference/endpoint/vacanciesdetailsconfig"]
-        },
-        {
-          "group": "Old",
-          "pages":["api-reference/endpoint/jobalert",
-          "api-reference/endpoint/updatejobalert",
-          "api-reference/endpoint/deletejobalertid",
-          "api-reference/endpoint/getjobalert",
-          "api-reference/endpoint/generatejobalert"]
-        },
-        {
-          "group": "Lookups",
-          "pages":["api-reference/endpoint/mailingtemplate",
-          "api-reference/endpoint/dataspecific"]
-        },
-        {
-          "group": "Job Agents",
-          "pages":["api-reference/endpoint/jobagenttype",
-          "api-reference/endpoint/createjobagent",
-          "api-reference/endpoint/resendemail",
-          "api-reference/endpoint/activatejobagent",
-          "api-reference/endpoint/emailexists",
-          "api-reference/endpoint/getjobagent",
-          "api-reference/endpoint/putjobagent",
-          "api-reference/endpoint/deletejobagent",
-          "api-reference/endpoint/jobagentconfig"]
-        },
-        {
-          "group": "Candidates",
-          "pages":["api-reference/endpoint/createcandidate",
-          "api-reference/endpoint/getcandidate"]
-        },
-        {
-          "group": "Default",
-          "pages":["api-reference/endpoint/swagger"]
+          "group": "Domain Endpoints",
+          "pages": [ "api-reference/endpoint/checkdomain",
+          "api-reference/endpoint/checkdomainstatus",
+          "api-reference/endpoint/registerdomain",
+          "api-reference/endpoint/registerdomainwith",
+          "api-reference/endpoint/transferin",
+          "api-reference/endpoint/renewalsdomain"]
         }
       ]
     }
