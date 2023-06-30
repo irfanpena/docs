@@ -66,8 +66,7 @@
           "api-reference/endpoint/registerdomain",
           "api-reference/endpoint/registerdomainwith",
           "api-reference/endpoint/transferin",
-          "api-reference/endpoint/renewalsdomain",
-          "api-reference/endpoint/checkcontact"]
+          "api-reference/endpoint/renewalsdomain"]
         }
       ]
     }
